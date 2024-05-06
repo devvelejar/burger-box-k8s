@@ -34,3 +34,4 @@ override.tf.json
 terraform.rc
 
 linux_386/
+**/node_modules/*

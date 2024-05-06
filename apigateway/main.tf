@@ -5,7 +5,7 @@ provider "aws" {
 
 
 resource "aws_lambda_function" "minha_funcao_lambda" {
-  filename      = "index.zip"
+  filename      = "apigateway.zip"
   function_name = "minha_funcao_lambda"
   role          = var.labRole
   handler       = "index.handler"
