@@ -1,11 +1,9 @@
 provider "aws" {
-  profile = "fiap"
-  region = "us-east-1"  # Substitua pela região desejada
+  region = "us-east-1"
 }
 
-// Resources
 resource "aws_cognito_user_pool" "user_pool" {
-  name = "user-pool"
+  name = "user-burger-box-pool"
 
   username_attributes = ["email"]
   auto_verified_attributes = ["email"]
@@ -53,7 +51,7 @@ resource "aws_cognito_user_pool_domain" "cognito-domain" {
   user_pool_id = "${aws_cognito_user_pool.user_pool.id}"
 }
 
-resource "aws_cognito_user" "example" {
+resource "aws_cognito_user" "cognito_user" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
   username     = "maxmilian.lemos@gmail.com"
   password     = "Teste123%" 
