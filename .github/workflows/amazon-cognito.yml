@@ -23,15 +23,15 @@ jobs:
       
     - name: Terraform init
       run: |
-        cd amazon-eks/
+        cd amazon-cognito/
         terraform init
       
     - name: Terraform plan
       run: |
-        cd amazon-eks/
+        cd amazon-cognito/
         terraform plan
       
     - name: Terraform apply
       run: |
-        cd amazon-eks/
+        cd amazon-cognito/
         terraform apply -auto-approve
