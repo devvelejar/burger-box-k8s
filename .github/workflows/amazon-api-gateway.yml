@@ -22,10 +22,16 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       
     - name: Terraform init
-      run: terraform init
+      run: |
+        cd amazon-api-gateway/
+        terraform init
       
     - name: Terraform plan
-      run: terraform plan
+      run: |
+        cd amazon-api-gateway/
+        terraform plan
       
     - name: Terraform apply
-      run: terraform apply -auto-approve
+      run: |
+        cd amazon-api-gateway/
+        terraform apply -auto-approve
