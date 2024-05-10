@@ -5,7 +5,7 @@ on:
     paths:
     - 'amazon-cognito/**'
     branches:
-      - master
+      - main
 
 jobs:
   terraform:
