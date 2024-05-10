@@ -3,9 +3,9 @@ provider "aws" {
 }
 
 
-resource "aws_lambda_function" "minha_funcao_lambda" {
-  filename      = "apigateway.zip"
-  function_name = "minha_funcao_lambda"
+resource "aws_lambda_function" "oauth-cognito" {
+  filename      = "oauth-cognito.zip"
+  function_name = "oauth-cognito"
   role          = var.labRole
   handler       = "index.handler"
   runtime       = "nodejs20.x"
@@ -47,13 +47,13 @@ resource "aws_api_gateway_integration" "integration" {
   http_method             = aws_api_gateway_method.method.http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
-  uri                     = aws_lambda_function.minha_funcao_lambda.invoke_arn
+  uri                     = aws_lambda_function.oauth-cognito.invoke_arn
 }
 
 resource "aws_lambda_permission" "apigw_lambda" {
   statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.minha_funcao_lambda.function_name
+  function_name = aws_lambda_function.oauth-cognito.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "arn:aws:execute-api:us-east-1:467827799632:${aws_api_gateway_rest_api.meu_api_gateway.id}/*/*/*"
 }
