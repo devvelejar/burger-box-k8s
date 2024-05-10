@@ -5,7 +5,7 @@ on:
     paths:
     - 'amazon-api-gateway/**'
     branches:
-      - teste
+      - main
 
 jobs:
   terraform:
