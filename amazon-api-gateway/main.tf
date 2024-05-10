@@ -2,7 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-
 resource "aws_lambda_function" "oauth-cognito" {
   filename      = "oauth-cognito.zip"
   function_name = "oauth-cognito"

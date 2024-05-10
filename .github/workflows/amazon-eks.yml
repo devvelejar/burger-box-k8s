@@ -5,7 +5,7 @@ on:
     paths:
     - 'amazon-eks/**'
     branches:
-      - teste
+      - main
 
 jobs:
   terraform:

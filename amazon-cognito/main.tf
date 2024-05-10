@@ -56,3 +56,4 @@ resource "aws_cognito_user" "cognito_user" {
   username     = "maxmilian.lemos@gmail.com"
   password     = "Teste123%" 
 }
+

@@ -20,18 +20,23 @@ jobs:
       
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
-      
-    - name: Terraform init
+
+    - name: Terraform destroy
       run: |
-        cd amazon-api-gateway/
-        terraform init
+        cd amazon-cognito/
+        terraform destroy
+
+    # - name: Terraform init
+    #   run: |
+    #     cd amazon-api-gateway/
+    #     terraform init
       
-    - name: Terraform plan
-      run: |
-        cd amazon-api-gateway/
-        terraform plan
+    # - name: Terraform plan
+    #   run: |
+    #     cd amazon-api-gateway/
+    #     terraform plan
       
-    - name: Terraform apply
-      run: |
-        cd amazon-api-gateway/
-        terraform apply -auto-approve
+    # - name: Terraform apply
+    #   run: |
+    #     cd amazon-api-gateway/
+    #     terraform apply -auto-approve
