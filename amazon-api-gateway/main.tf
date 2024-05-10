@@ -56,3 +56,4 @@ resource "aws_lambda_permission" "apigw_lambda" {
   principal     = "apigateway.amazonaws.com"
   source_arn    = "arn:aws:execute-api:us-east-1:467827799632:${aws_api_gateway_rest_api.meu_api_gateway.id}/*/*/*"
 }
+
