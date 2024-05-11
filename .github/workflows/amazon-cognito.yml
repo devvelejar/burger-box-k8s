@@ -26,17 +26,17 @@ jobs:
         cd amazon-cognito/
         terraform init
 
-    - name: Terraform destroy
+    # - name: Terraform destroy
+    #   run: |
+    #     cd amazon-cognito/
+    #     terraform destroy -auto-approve
+      
+    - name: Terraform plan
       run: |
         cd amazon-cognito/
-        terraform destroy -auto-approve
+        terraform plan
       
-    # - name: Terraform plan
-    #   run: |
-    #     cd amazon-cognito/
-    #     terraform plan
-      
-    # - name: Terraform apply
-    #   run: |
-    #     cd amazon-cognito/
-    #     terraform apply -auto-approve
+    - name: Terraform apply
+      run: |
+        cd amazon-cognito/
+        terraform apply -auto-approve

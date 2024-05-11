@@ -26,17 +26,17 @@ jobs:
         cd amazon-api-gateway/
         terraform init
 
-    - name: Terraform destroy -auto-approve
+    # - name: Terraform destroy -auto-approve
+    #   run: |
+    #     cd amazon-cognito/
+    #     terraform destroy
+      
+    - name: Terraform plan
       run: |
-        cd amazon-cognito/
-        terraform destroy
+        cd amazon-api-gateway/
+        terraform plan
       
-    # - name: Terraform plan
-    #   run: |
-    #     cd amazon-api-gateway/
-    #     terraform plan
-      
-    # - name: Terraform apply
-    #   run: |
-    #     cd amazon-api-gateway/
-    #     terraform apply -auto-approve
+    - name: Terraform apply
+      run: |
+        cd amazon-api-gateway/
+        terraform apply -auto-approve
