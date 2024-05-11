@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_lambda_function" "oauth-cognito" {
   filename      = "oauth-cognito.zip"
-  function_name = "oauth-cognito_"
+  function_name = "oauth-cognito"
   role          = var.labRole
   handler       = "index.handler"
   runtime       = "nodejs20.x"
